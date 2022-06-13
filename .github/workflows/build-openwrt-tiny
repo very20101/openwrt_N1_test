@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-#source code from https://github.com/quanjindeng/Actions_OpenWrt-Amlogic/blob/main/.github/workflows/编译固件（自用）.yml
+#source code from https://github.com/quanjindeng/Actions_OpenWrt-Amlogic
 
 
 name: build openwrt
@@ -74,6 +74,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        
     - name: 编译工具链缓存
       uses: klever1988/cachewrtbuild@main
       with:
@@ -86,6 +87,7 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+        
     - name: 更新feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -108,6 +110,7 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        
     - name: 编译固件
       id: compile
       run: |
