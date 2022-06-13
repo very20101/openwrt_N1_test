@@ -39,6 +39,7 @@ A template for building OpenWrt with GitHub Actions
 - [dev-drprasad/delete-older-releases](https://github.com/dev-drprasad/delete-older-releases)
 - [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
 - [source-code4build](https://github.com/quanjindeng/Actions_OpenWrt-Amlogic)
+- [source-code4build](https://github.com/quanjindeng/Actions_OpenWrt-Amlogic)
 - [firmwire](https://github.com/unifreq/openwrt_packit）
 
 ## License
