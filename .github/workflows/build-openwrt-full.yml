@@ -89,10 +89,10 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
         
-    - name: update feeds
+    - name: 更新feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: install feeds
+    - name: 安装feeds
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: 加载自定义配置
@@ -103,7 +103,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
-    - name: package download
+    - name: 下载软件包
       id: package
       run: |
         cd openwrt
@@ -149,7 +149,7 @@ jobs:
     - name: 打包内核
       uses: unifreq/openwrt_packit@master
       env:
-        WHOAMI: deng
+        WHOAMI: build(source-code-from-deng)
         OPENWRT_ARMVIRT: openwrt-armvirt/*.tar.gz
         PACKAGE_SOC: s905d
        # KERNEL_AUTO_LATEST: false
@@ -166,7 +166,7 @@ jobs:
         body: |
           ### **适用于Amlogic平台的N1盒子OpenWrt固件--全插件**
           * **固件信息：**
-          默认IP: `10.10.10.1`
+          默认IP: `192.168.1.100`
           默认用户名: `root`
           默认密码: `password`
           * **使用方法：**
@@ -175,8 +175,6 @@ jobs:
           3. 登录Luci界面后，可直接使用`晶晨宝盒`插件进行写入emmc或者更新操作（使用前先按需求填写好插件设置），免去手动输入命令！
           * **更新说明：**
           目前已集成大部分常用插件！
-          * **N1云编译OP固件互助交流群：**
-          https://t.me/OpenWrt_n1
           * **提示：**
           `openwrt_s905d_n1_XX_XX` 文件名才是固件！
           
