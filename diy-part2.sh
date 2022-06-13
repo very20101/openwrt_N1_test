@@ -23,7 +23,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/autocore/Makefile
 
 # Set DISTRIB_REVISION
-sed -i "s/OpenWrt /Deng Build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /Build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Modify system hostname（FROM OpenWrt CHANGE TO OpenWrt-N1）
 # sed -i 's/OpenWrt/OpenWrt-N1/g' package/base-files/files/bin/config_generate
