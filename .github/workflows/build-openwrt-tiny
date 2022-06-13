@@ -11,14 +11,12 @@
 #source code from https://github.com/quanjindeng/Actions_OpenWrt-Amlogic/blob/main/.github/workflows/编译固件（自用）.yml
 
 
-name: 编译固件（自用）
+name: build openwrt
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
-  schedule:
-    - cron: 0 16 * * 4
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
