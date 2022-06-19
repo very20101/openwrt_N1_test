@@ -17,8 +17,8 @@ on:
   repository_dispatch:
   workflow_dispatch:
 
-  schedule:
-    - cron: 0 12 */5 * *
+ # schedule:
+ #   - cron: 0 12 */5 * *
 
 
 env:
