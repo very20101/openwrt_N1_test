@@ -1,7 +1,6 @@
 <div align="center">
 <img width="768" src="https://cdn.jsdelivr.net/gh/haiibo/OpenWrt/images/openwrt.png"/>
 <h1>OpenWrt — 多设备固件云编译</h1>
-<h1>Code from haibo/openwrt-https://github.com/haiibo/OpenWrt</h1>
 
 <img src="https://img.shields.io/github/downloads/haiibo/OpenWrt/total.svg?style=for-the-badge&color=32C955"/>
 <img src="https://img.shields.io/github/stars/haiibo/OpenWrt.svg?style=for-the-badge&color=orange"/>
