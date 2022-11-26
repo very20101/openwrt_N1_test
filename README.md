@@ -40,6 +40,7 @@ A template for building OpenWrt with GitHub Actions
 - [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
 - [source-code4build](https://github.com/quanjindeng/Actions_OpenWrt-Amlogic)
 - [firmwire-packaging](https://github.com/unifreq/openwrt_packit)
+- [haiibo-openwrt](https://github.com/haiibo/OpenWrt)
 
 
 ## License
