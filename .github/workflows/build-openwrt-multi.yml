@@ -150,12 +150,20 @@ jobs:
       if: steps.hash.outputs.REBUILD_TOOLCHAIN == 'true'
       run: |
         cd workspace
-        mksquashfs openwrt $TOOLCHAIN_IMAGE -force-gid 1001 -force-uid 1001 -comp zstd
         mkdir -p $GITHUB_WORKSPACE/output
-        split -d -b 1900M $TOOLCHAIN_IMAGE $GITHUB_WORKSPACE/output/$TOOLCHAIN_IMAGE.img.
-        rm $TOOLCHAIN_IMAGE
+        mksquashfs openwrt $GITHUB_WORKSPACE/output/$TOOLCHAIN_IMAGE.img -force-gid 1001 -force-uid 1001 -comp zstd
         echo $CURRENT_HASH > $GITHUB_WORKSPACE/output/$TOOLCHAIN_IMAGE.hash
         ls -lh $GITHUB_WORKSPACE/output
+        
+    - name: Delete Old Toolchain Assets
+      if: steps.hash.outputs.REBUILD_TOOLCHAIN == 'true'
+      uses: mknejp/delete-release-assets@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ env.TOOLCHAIN_TAG }}
+        assets: '${{ env.TOOLCHAIN_IMAGE }}.*'
+        fail-if-no-assets: false
+        fail-if-no-release: false
 
     - name: Upload Toolchain Image
       if: steps.hash.outputs.REBUILD_TOOLCHAIN == 'true'
