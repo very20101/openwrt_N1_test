@@ -403,7 +403,7 @@ jobs:
       uses: unifreq/openwrt_packit@master
       env:
         OPENWRT_ARMVIRT: openwrt-armvirt/*rootfs.tar.gz
-        PACKAGE_SOC: all
+        PACKAGE_SOC: s905d_s905x3_r68s_h68k_qemu
         WHOAMI: Haiibo
         KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
         KERNEL_VERSION_NAME: 5.15.70
