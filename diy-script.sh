@@ -33,6 +33,7 @@ git clone --depth 1 -b lede https://github.com/pymumu/luci-app-smartdns package/
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-eqos package/luci-app-eqos
+svn co https://github.com/coolsnowwolf/packages/trunk/net/n2n feeds/packages/net/n2n
 
 # 科学上网插件
 git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
@@ -42,7 +43,6 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/l
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
-svn co https://github.com/coolsnowwolf/packages/trunk/net/n2n feeds/packages/net/n2n
 
 # 科学上网插件依赖
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
