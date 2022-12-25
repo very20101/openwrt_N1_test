@@ -286,6 +286,8 @@ jobs:
     - name: Download DL Package
       run: |
         cd $OPENWRT_PATH
+        rm -rf package/lean/n2n
+        svn co https://github.com/coolsnowwolf/packages/trunk/net/n2n
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
