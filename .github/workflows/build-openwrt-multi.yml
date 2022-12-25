@@ -286,8 +286,7 @@ jobs:
     - name: Download DL Package
       run: |
         cd $OPENWRT_PATH
-        rm -rf feeds/packages/net/n2n/Makefile 
-        wget -O feeds/packages/net/n2n/Makefile https://raw.githubusercontent.com/very20101/openwrt_N1_test/main/Makefile-n2n
+        svn co https://github.com/coolsnowwolf/packages/trunk/net/n2n feeds/packages/net/n2n
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
