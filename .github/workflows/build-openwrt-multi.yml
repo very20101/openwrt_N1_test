@@ -294,8 +294,8 @@ jobs:
     - name: Compile Packages
       run: |
         cd $OPENWRT_PATH
-        rm -rf feeds/packages/lang/python/python3/patches/026-openssl-feature-flags.patch 
-        rm -rf feeds/packages/lang/python/python3/patches/028-host-python-support-ssl-with-libressl.patch
+        #rm -rf feeds/packages/lang/python/python3/patches/026-openssl-feature-flags.patch 
+        #rm -rf feeds/packages/lang/python/python3/patches/028-host-python-support-ssl-with-libressl.patch
         rm -rf package/small-package/brook/patches/010-chore-deps-update-iploc-to-fix-build-with-mips.patch
         echo -e "$(nproc) thread compile"
         make diffconfig
