@@ -255,11 +255,7 @@ jobs:
       run: |
         mkdir -p workspace
         cd workspace
-        #for i in {0..9}
-        #do
-          #curl -fsL https://github.com/$GITHUB_REPOSITORY/releases/download/$TOOLCHAIN_TAG/$TOOLCHAIN_IMAGE.img.0$i >> $TOOLCHAIN_IMAGE.img || break
-        #done
-        curl -fsL https://github.com/$GITHUB_REPOSITORY/releases/download/$TOOLCHAIN_TAG/$TOOLCHAIN_IMAGE.img >> $TOOLCHAIN_IMAGE.img || break
+        wget -q https://github.com/$GITHUB_REPOSITORY/releases/download/$TOOLCHAIN_TAG/$TOOLCHAIN_IMAGE.img
         mkdir openwrt-ro openwrt workdir overlay
         sudo mount -o loop $TOOLCHAIN_IMAGE.img openwrt-ro
         sudo mount -t overlay overlay -o lowerdir=openwrt-ro,upperdir=overlay,workdir=workdir openwrt
