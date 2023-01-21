@@ -182,21 +182,21 @@ jobs:
           * **提示：**
           固件名称：`openwrt_s905d_n1_XX_XX` 
           
-    - name: 清理Actions空间
-      uses: Mattraks/delete-workflow-runs@main
-      with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          keep_minimum_runs: 0
-          retain_days: 7
+   # - name: 清理Actions空间
+    #  uses: Mattraks/delete-workflow-runs@main
+    #  with:
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    repository: ${{ github.repository }}
+       #   keep_minimum_runs: 10
+        #  retain_days: 90
           #retain_days: ${{ github.event.inputs.action_days }}
     
-    - name: 删除多余releases
-      uses: dev-drprasad/delete-older-releases@master
-      with:
-        repo: ${{ github.repository }}
-        keep_latest: 8
+    #- name: 删除多余releases
+      #uses: dev-drprasad/delete-older-releases@master
+      #with:
+        #repo: ${{ github.repository }}
+        #keep_latest: 30
         #keep_latest: ${{ github.event.inputs.rele }}
         delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #env:
+        #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
