@@ -57,6 +57,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/ipt
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/microsocks
 #svn co https://github.com/kenzok8/small-package/trunk/naiveproxy package/naiveproxy
 #svn co https://github.com/kenzok8/small-package/trunk/gn package/gn
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/packages/gn package/gn
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/naiveproxy
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/pdnsd-alt
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/sagernet-core package/sagernet-core
