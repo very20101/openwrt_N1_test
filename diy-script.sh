@@ -45,19 +45,19 @@ svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 p
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 
 # 科学上网插件依赖
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
-svn co https://github.com/kenzok8/small-package/trunk/brook package/brook
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
-svn co https://github.com/kenzok8/small-package/trunk/chinadns-ng package/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+#svn co https://github.com/kenzok8/small-package/trunk/brook package/brook
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
+#svn co https://github.com/kenzok8/small-package/trunk/chinadns-ng package/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/dns2socks
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/dns2tcp
-svn co https://github.com/kenzok8/small-package/trunk/dns2tcp package/dns2tcp
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/dns2tcp
+#svn co https://github.com/kenzok8/small-package/trunk/dns2tcp package/dns2tcp
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/hysteria
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/ipt2socks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/microsocks
-svn co https://github.com/kenzok8/small-package/trunk/naiveproxy package/naiveproxy
-svn co https://github.com/kenzok8/small-package/trunk/gn package/gn
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/naiveproxy
+#svn co https://github.com/kenzok8/small-package/trunk/naiveproxy package/naiveproxy
+#svn co https://github.com/kenzok8/small-package/trunk/gn package/gn
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/naiveproxy
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/pdnsd-alt
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/sagernet-core package/sagernet-core
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
@@ -132,6 +132,10 @@ sed -i "s/${orig_version}/R${date_version} by Haiibo/g" package/lean/default-set
 sed -i '/h=${g}.*/d' package/lean/autocore/files/x86/autocore
 sed -i 's/(dmesg.*/{a}${b}${c}${d}${e}${f}/g' package/lean/autocore/files/x86/autocore
 sed -i 's/echo $h/echo $g/g' package/lean/autocore/files/x86/autocore
+
+# 删除主题强制默认
+find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
+
 
 # 修改 Makefile
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
