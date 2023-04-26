@@ -38,7 +38,7 @@ svn export https://github.com/coolsnowwolf/packages/trunk/net/n2n package/n2n
 # 科学上网插件
 git clone --depth 1 https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb package/lua-maxminddb
-svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass package/luci-app-bypass
+#svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass package/luci-app-bypass
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/luci-app-passwall
 svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
