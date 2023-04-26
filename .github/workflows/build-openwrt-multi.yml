@@ -20,7 +20,7 @@ env:
   CONFIG_FILE: .armv8-multi-config
   DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
-  CLASH_KERNEL: armv8
+  CLASH_KERNEL: arm64
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: ROOTFS_PLUS
@@ -292,8 +292,8 @@ jobs:
     - name: Compile Packages
       run: |
         cd $OPENWRT_PATH
-        rm -rf package/kernel/mac80211
-        svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
+        #rm -rf package/kernel/mac80211
+        #svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
         #rm -rf feeds/packages/lang/python/python3/patches/026-openssl-feature-flags.patch 
         #rm -rf feeds/packages/lang/python/python3/patches/028-host-python-support-ssl-with-libressl.patch
         #rm -rf feeds/packages/net/bind/Makefile
