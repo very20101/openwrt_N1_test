@@ -45,10 +45,10 @@ svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwal
 svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 
 # 科学上网插件依赖
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
-#svn export https://github.com/kenzok8/small-package/trunk/brook package/brook
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
-#svn export https://github.com/kenzok8/small-package/trunk/chinadns-ng package/chinadns-ng
+#svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
+svn export https://github.com/kenzok8/small-package/trunk/brook package/brook
+#svn export https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/chinadns-ng
+svn export https://github.com/kenzok8/small-package/trunk/chinadns-ng package/chinadns-ng
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/dns2socks
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/dns2tcp
 #svn export https://github.com/kenzok8/small-package/trunk/dns2tcp package/dns2tcp
@@ -60,7 +60,8 @@ svn export https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks packag
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/gn package/gn
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/naiveproxy
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/pdnsd-alt
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/sagernet-core package/sagernet-core
+#svn export https://github.com/xiaorouji/openwrt-passwall/trunk/sagernet-core package/sagernet-core
+svn export https://github.com/kenzok8/small-package/trunk/sagernet-core package/sagernet-core
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/tcping
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/trojan-go
