@@ -292,8 +292,6 @@ jobs:
     - name: Compile Packages
       run: |
         cd $OPENWRT_PATH
-        rm -rf package/network/services/hostapd
-        svn export https://github.com/openwrt/openwrt/trunk/package/network/services/hostapd package/network/services/hostapd
         echo -e "$(nproc) thread compile"
         make diffconfig
         make target/compile -j$(nproc) IGNORE_ERRORS="m n" BUILD_LOG=1 || \
