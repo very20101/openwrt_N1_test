@@ -48,6 +48,7 @@ svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash packa
 svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/luci-app-passwall
 svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 package/luci-app-passwall2
 svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk/packages/tuic-client packages/tuic-client
 
 # 科学上网插件依赖
 #svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/brook
