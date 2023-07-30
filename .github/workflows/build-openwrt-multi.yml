@@ -292,8 +292,10 @@ jobs:
     - name: Compile Packages
       run: |
         cd $OPENWRT_PATH
-        rm -rf packages/tuic-client
-        svn export https://github.com/kenzok8/small-package/trunk/tuic-client packages/tuic-client
+        #rm -rf packages/tuic-client
+        #svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
+        rm -rf package/lean/libcryptopp
+        https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
         echo -e "$(nproc) thread compile"
         make diffconfig
         make target/compile -j$(nproc) IGNORE_ERRORS="m n" BUILD_LOG=1 || \
