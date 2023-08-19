@@ -209,7 +209,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        make distclean
+  
         docker rmi $(docker images -q)
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android
         sudo -E apt-get -y purge azure-cli* docker* ghc* zulu* llvm* firefox* google* dotnet* powershell* openjdk* mysql* php* mongodb* moby* snap* aspnetcore*
