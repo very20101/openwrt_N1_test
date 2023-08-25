@@ -295,8 +295,8 @@ jobs:
         cd $OPENWRT_PATH
         #rm -rf packages/tuic-client
         #svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
-        rm -rf 	package/kernel/linux/modules/netsupport.mk
-        svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+        #rm -rf 	package/kernel/linux/modules/netsupport.mk
+        #svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
         rm -rf package/lean/libcryptopp
         svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
         echo -e "$(nproc) thread compile"
