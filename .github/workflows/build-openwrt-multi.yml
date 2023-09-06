@@ -69,6 +69,7 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
+        rustc --version
 
     - name: Clone Source Code
       id: clone
@@ -297,6 +298,8 @@ jobs:
         #svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
         #rm -rf 	package/kernel/linux/modules/netsupport.mk
         #svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+        rm -rf feeds/packages/lang/rust
+        svn export https://github.com/coolsnowwolf/packages/trunk/lang/rust feeds/packages/lang/rust
         rm -rf package/lean/libcryptopp
         svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
         echo -e "$(nproc) thread compile"
