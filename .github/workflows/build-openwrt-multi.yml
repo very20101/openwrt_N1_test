@@ -213,7 +213,7 @@ jobs:
   
         docker rmi $(docker images -q)
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android
-        sudo -E apt purge azure-cli* docker* ghc* zulu* llvm* firefox* google* dotnet* powershell* openjdk* mysql* php* mongodb* moby* snap* aspnetcore*
+        sudo -E apt purge azure-cli* docker* ghc* zulu* llvm* firefox* google* dotnet* powershell* openjdk* mysql* php* mongodb* snap* aspnetcore*
         sudo -E apt update
         sudo -E apt install libfuse-dev $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt autoremove --purge
