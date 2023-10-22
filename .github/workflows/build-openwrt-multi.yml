@@ -300,8 +300,8 @@ jobs:
         #svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
         #rm -rf feeds/packages/lang/rust
         #svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
-        #rm -rf package/lean/libcryptopp
-        #svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
+        rm -rf package/lean/libcryptopp
+        svn export https://github.com/very20101/Openwrt_N1_try/trunk/libcryptopp package/lean/libcryptopp
         rm -rf feeds/packages/utils/libnetwork
         echo -e "$(nproc) thread compile"
         make diffconfig
