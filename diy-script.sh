@@ -142,5 +142,18 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
+#rm -rf packages/tuic-client
+#svn export https://github.com/very20101/Openwrt_N1_try/trunk/tuic-client packages/tuic-client
+#rm -rf package/kernel/linux/modules/netsupport.mk
+#svn export https://github.com/very20101/Openwrt_N1_try/trunk/PATCH/netsupport.mk package/kernel/linux/modules/netsupport.mk
+#rm -rf feeds/packages/lang/rust
+#svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
+rm -rf package/lean/libcryptopp
+merge_package https://github.com/very20101/Openwrt_N1_try/libcryptopp package/lean/libcryptopp
+rm -rf feeds/packages/utils/libnetwork
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+echo "========================="
+echo " DIY 配置完成……"
