@@ -15,8 +15,8 @@ on:
     - cron: 0 0 */2 * *
 
 env:
-  SOURCE_URL: https://github.com/coolsnowwolf/lede
-  SOURCE_BRANCH: master
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   CONFIG_FILE: .armv8-multi-config
   DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
@@ -301,7 +301,7 @@ jobs:
         #rm -rf feeds/packages/lang/rust
         #svn export https://github.com/openwrt/packages/trunk/lang/rust feeds/packages/lang/rust
         rm -rf package/lean/libcryptopp
-        git_sparse_clone main https://github.com/very20101/Openwrt_N1_try/libcryptopp package/lean/libcryptopp
+        merge_package https://github.com/very20101/Openwrt_N1_try/libcryptopp package/lean/libcryptopp
         rm -rf feeds/packages/utils/libnetwork
         echo -e "$(nproc) thread compile"
         make diffconfig
