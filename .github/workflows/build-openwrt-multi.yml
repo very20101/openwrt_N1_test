@@ -15,8 +15,8 @@ on:
     - cron: 0 0 */2 * *
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  SOURCE_URL: https://github.com/coolsnowwolf/lede
+  SOURCE_BRANCH: master
   CONFIG_FILE: .armv8-multi-config
   DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
