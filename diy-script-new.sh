@@ -100,15 +100,14 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # DDNS.to
-merge_package https://github.com/linkease/nas-packages-luci nas-packages-luci/luci/luci-app-ddnsto
-merge_package https://github.com/linkease/nas-packages nas-packages-luci/network/services/ddnsto
-
+merge_package https://github.com/kenzok8/small-package luci/luci-app-ddnsto
+merge_package https://github.com/linkease/nas-packages network/services/ddnsto
 # iStore
 merge_package https://github.com/linkease/istore-ui istore-ui/app-store-ui
 merge_package https://github.com/linkease/istore istore/luci
 
 # 在线用户
-merge_package https://github.com/haiibo/packages packages/luci-app-onliner
+merge_package https://github.com/kenzok8/small-package package/luci-app-onliner
 sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
 sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
 chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
