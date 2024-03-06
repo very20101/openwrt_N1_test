@@ -8,12 +8,13 @@
 # https://github.com/P3TERX/Actions-OpenWrt
 # Code from https://github.com/breakings/openwrt
 # Code from https://github.com/haiibo/openwrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
+# File name: diy-scipr-new.sh
+# Description: OpenWrt DIY script
 #
 
 # Modify default IP
   sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
+  
 # kernel
   #sed -i "s/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g" target/linux/armvirt/Makefile
   #sed -i "s/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g" target/linux/armvirt/Makefile
@@ -21,6 +22,16 @@
 #sagernet-core
   #sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' feeds/small8/sagernet-core/Makefile
   #sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' feeds/small8/sagernet-core/Makefile
+
+# 移除要替换的包
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/net/msd_lite
+rm -rf feeds/packages/net/smartdns
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-netgear
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/luci/applications/luci-app-netdata
+rm -rf feeds/luci/applications/luci-app-serverchan
 
 echo "开始 DIY 配置……"
 echo "========================="
