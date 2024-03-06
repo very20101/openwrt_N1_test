@@ -25,9 +25,9 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: ROOTFS_PLUS
+  FIRMWARE_TAG: ROOTFS_PLUS_NEW
   OPENWRT_RELEASE: true
-  OPENWRT_TAG: ARMv8_PLUS
+  OPENWRT_TAG: ARMv8_PLUS_NEW
   TZ: Asia/Shanghai
 
 jobs:
@@ -203,11 +203,11 @@ jobs:
         body: |
           **This is Temporary Firmware for Armvirt 64**
           ### 📒 固件信息
-          - 🚀 成品固件点击此处跳转➦[PLUS](https://github.com/haiibo/OpenWrt/releases/tag/ARMv8_PLUS)即可下载
+          - 🚀 成品固件点击此处跳转➦[PLUS_NEW](https://github.com/haiibo/OpenWrt/releases/tag/ARMv8_PLUS_NEW)即可下载
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (多功能临时固件)
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: 192.168.1.1
+          - 🌐 默认地址: 192.168.1.100
           - 🔑 默认密码: password
           ### 🧊 固件版本
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
