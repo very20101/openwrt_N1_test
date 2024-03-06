@@ -289,7 +289,7 @@ jobs:
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: 192.168.1.1
+          - 🌐 默认地址: 192.168.1.100
           - 🔑 默认密码: password
           ### 🍻 安装与更新
           - 用插件安装: 系统 → 晶晨宝盒 → 安装 OpenWrt → 选择型号 → 安装
