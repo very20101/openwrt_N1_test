@@ -69,6 +69,8 @@ merge_package https://github.com/kenzok8/small-package small-package/filebrowser
 merge_package https://github.com/Lienol/openwrt-package openwrt-package/luci-app-ssr-mudb-server
 merge_package https://github.com/immortalwrt/luci luci/applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
+rm -rf feeds/packages/utils/v2dat
+merge_package https://github.com/sbwml/luci-app-mosdns/v2dat feeds/packages/utils/v2dat 
 
 # 科学上网插件
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
