@@ -72,7 +72,7 @@ merge_package https://github.com/immortalwrt/luci luci/applications/luci-app-eqo
 rm -rf feeds/packages/utils/v2dat
 merge_package https://github.com/sbwml/luci-app-mosdns feeds/packages/utils/v2dat
 rm -rf feeds/packages/libs/libxslt
-merge_package https://github.com/openwrt/packages/tree/master/libs/libxslt feeds/packages/libs/libxslt
+merge_package https://github.com/openwrt/packages/tree/master/libs feeds/packages/libs/libxslt
 
 # 科学上网插件
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
