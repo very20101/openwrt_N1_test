@@ -70,7 +70,7 @@ merge_package https://github.com/Lienol/openwrt-package openwrt-package/luci-app
 merge_package https://github.com/immortalwrt/luci luci/applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 rm -rf feeds/packages/utils/v2dat
-merge_package https://github.com/sbwml/luci-app-mosdns/v2dat feeds/packages/utils/v2dat
+merge_package https://github.com/sbwml/luci-app-mosdns feeds/packages/utils/v2dat
 rm -rf feeds/packages/libs/libxslt
 merge_package https://github.com/openwrt/packages/tree/master/libs/libxslt feeds/packages/libs/libxslt
 
