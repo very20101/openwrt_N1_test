@@ -64,9 +64,9 @@ git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
-merge_package https://github.com/kenzok8/small-package small-package/luci-app-filebrowser
-merge_package https://github.com/kenzok8/small-package small-package/filebrowser
-merge_package https://github.com/Lienol/openwrt-package openwrt-package/luci-app-ssr-mudb-server
+merge_package https://github.com/kenzok8/small-package package/luci-app-filebrowser
+merge_package https://github.com/kenzok8/small-package package/filebrowser
+merge_package https://github.com/Lienol/openwrt-package package/luci-app-ssr-mudb-server
 merge_package https://github.com/immortalwrt/luci luci/applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 rm -rf feeds/packages/utils/v2dat
@@ -79,7 +79,7 @@ git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages 
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
-merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
+merge_package https://github.com/vernesong/OpenClash package/OpenClash/luci-app-openclash
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
@@ -105,11 +105,12 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # DDNS.to
-merge_package https://github.com/kenzok8/small-package luci/luci-app-ddnsto
-merge_package https://github.com/linkease/nas-packages network/services/ddnsto
+merge_package https://github.com/kenzok8/small-package package/luci-app-ddnsto
+merge_package https://github.com/linkease/nas-packages package/network/services/ddnsto
+
 # iStore
-merge_package https://github.com/linkease/istore-ui istore-ui/app-store-ui
-merge_package https://github.com/linkease/istore istore/luci
+merge_package https://github.com/linkease/istore-ui package/istore-ui/app-store-ui
+merge_package https://github.com/linkease/istore package/istore/luci
 
 # 在线用户
 merge_package https://github.com/kenzok8/small-package package/luci-app-onliner
