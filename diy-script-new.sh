@@ -155,7 +155,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/l
 
 # libxslt
 rm -rf feeds/packages/lib/libxslt
-merge_package https://github.com/coolsnowwolf/packages/libs/libxslt feeds/packages/lib/libxslt
+merge_package https://github.com/coolsnowwolf/packages/libs/libxslt package/libxslt
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
