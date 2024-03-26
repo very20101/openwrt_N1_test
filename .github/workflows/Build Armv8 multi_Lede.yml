@@ -8,26 +8,26 @@
 # Code mainly from https://github.com/haiibo/OpenWrt
 #===============================================
 
-name: ARMv8 multi Openwrt
+name: ARMv8_multi_Openwrt
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 20 * * 6
+    - cron: 0 12 * * 6
 
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
   SOURCE_BRANCH: master
-  CONFIG_FILE: ARMv8/lede-huge.config
+  CONFIG_FILE: configs/armv8-plus.config
   #FEEDS_CONF: multi-feeds.conf.default
-  DIY_SCRIPT: diy-script-lede.sh
-  TOOLCHAIN_TAG: Toolchain_multi
+  DIY_SCRIPT: diy-script-new.sh
+  TOOLCHAIN_TAG: Toolchain_multi-test
   CLASH_KERNEL: armv8
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: ROOTFS_multi
+  FIRMWARE_TAG: ROOTFS_multi-test
   OPENWRT_RELEASE: true
-  OPENWRT_TAG: ARMv8_multi
+  OPENWRT_TAG: ARMv8_multi-test
   TZ: Asia/Shanghai
 
 jobs:
@@ -378,9 +378,9 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is Temporary Firmware for Armvirt 64**
-          * 这是 ARMv8_multi 多功能版打包临时固件，不可直刷
-          config配制https://github.com/breakings/OpenWrt/*/lede-huge.config
-          直刷固件参见 Tag 名为 ARMv8_multi 的 Releases
+          * 这是 ARMv8_multi-test 多功能版打包临时固件，不可直刷
+          config配制https://github.com/haiibo/OpenWrt/*/armv8-plus.config
+          直刷固件参见 Tag 名为 ARMv8_multi-test 的 Releases
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.VERSION_INFO }}
 
@@ -455,7 +455,7 @@ jobs:
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
           **This is OpenWrt Firmware for Armvirt 64**
-          * 这是 ARMv8_multi 多功能版本
+          * 这是 ARMv8_multi-test 多功能版本
           默认 IP：192.168.1.100 默认密码：password
           安装到 EMMC：系统 → 晶晨宝盒 → 安装 OpenWrt → 选择型号 → 安装
           升级 OpenWrt：系统 → 晶晨宝盒 → 手动上传更新 或者 在线下载更新
