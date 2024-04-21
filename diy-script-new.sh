@@ -159,7 +159,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/l
 
 # perl
 rm -rf feeds/packages/lang/perl
-git clone --depth=1 -b main https://github.com/very20101/openwrt_N1_test/modfy_file feeds/packages/lang/perl
+git clone -b main https://github.com/very20101/openwrt_N1_test/modfy_file feeds/packages/lang/perl
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
