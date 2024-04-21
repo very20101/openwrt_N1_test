@@ -159,7 +159,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/l
 
 # perlmod.mk
 rm -rf feeds/packages/lang/perl/perlmod.mk 
-merge_package https://github.com/very20101/openwrt_N1_test/blob/main/modfy_file/perlmod.mk feeds/packages/lang/perl/perlmod.mk
+merge_package https://github.com/very20101/openwrt_N1_test/modfy_file/perlmod.mk  feeds/packages/lang/perl/perlmod.mk 
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
