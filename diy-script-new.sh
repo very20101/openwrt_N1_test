@@ -158,7 +158,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/l
 #merge_package https://github.com/openwrt/packages/libs/libxslt feeds/packages/lib/libxslt
 
 # perlmod.mk
-rm -rf feeds/packages/lang/perl/perlmod.mk 
+rm -rf feeds/packages/lang/perl
 merge_package https://github.com/very20101/openwrt_N1_test/modfy_file feeds/packages/lang/perl
 
 ./scripts/feeds update -a
