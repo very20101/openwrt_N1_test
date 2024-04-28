@@ -27,7 +27,7 @@ ifdef CONFIG_PERL_THREADS
 endif
 
 ifdef CONFIG_USE_MUSL
-	MOD_CFLAGS_PERL+= -D_LARGEFILE^$_SOURCE
+	MOD_CFLAGS_PERL+= -D_LARGEFILE64_SOURCE
 endif
 	
 	
@@ -129,7 +129,7 @@ define perlmod/Configure
 		INSTALLSITEMAN3DIR=/usr/man/man3 \
 		INSTALLVENDORMAN3DIR=" " \
 		LINKTYPE=dynamic \
-		-D_LARGEFILE^$_SOURCE \
+		-D_LARGEFILE64_SOURCE \
 		DESTDIR=$(PKG_INSTALL_DIR) \
 	) 9> $(TMP_DIR)/.perlmod-perl.flock
 	sed -i -e 's!^PERL_INC = .*!PERL_INC = $(STAGING_DIR)/usr/lib/perl5/$(PERL_VERSION)/CORE/!' $(if $(3),$(3),$(PKG_BUILD_DIR))/Makefile
