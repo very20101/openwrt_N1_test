@@ -260,9 +260,9 @@ jobs:
       uses: ophub/flippy-openwrt-actions@main
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
-        PACKAGE_SOC: all
+        PACKAGE_SOC: s905d_s905x3_s922x_s905x
         WHOAMI: Haiibo
-        KERNEL_VERSION_NAME: 5.15.13_6.1.5
+        KERNEL_VERSION_NAME: 5.15.150_6.1.40
         KERNEL_AUTO_LATEST: true
         DISTRIB_REVISION: R${{ env.DATE1 }} by Haiibo
 
