@@ -15,7 +15,8 @@ on:
     types: started
 
 env:
-  SOURCE_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   TOOLCHAIN_TAG: Toolchain
   CLASH_KERNEL: arm64
   UPLOAD_BIN_DIR: false
