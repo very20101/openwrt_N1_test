@@ -9,8 +9,8 @@
 name: pack_newK
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 30 8 */2 * *
+  #schedule:
+    #- cron: 30 8 */2 * *
   watch:
     types: started
 
@@ -59,7 +59,7 @@ jobs:
         [ -d $FIRMWARE_PATH ] || mkdir -p $FIRMWARE_PATH
         #FIRMWARE_URL=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" | grep -o "ROOTFS_$VERSION.*rootfs.tar.gz")
         #FIRMWARE_URL=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/download/OpenWrt-NewK" | grep -o "ROOTFS_$VERSION.*rootfs.tar.gz")
-        wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_retry/releases/download/OpenWrt-nova/openwrt-armsr-armv8-generic-rootfs.tar.gz 
+        wget -q -P openwrt-armvirt https://github.com/very20101/openwrt_N1_test/releases/download/ROOTFS_PLUS/openwrt-armvirt-64-generic-rootfs.tar.gz
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Package Armvirt as OpenWrt
