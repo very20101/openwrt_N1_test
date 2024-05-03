@@ -15,9 +15,17 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: master
-  UPLOAD_RELEASE: true
+  SOURCE_URL: https://github.com/coolsnowwolf/lede
+  SOURCE_BRANCH: master
+  CONFIG_FILE: .armv8-multi-config
+  DIY_SCRIPT: diy-script-new.sh
+  TOOLCHAIN_TAG: Toolchain
+  CLASH_KERNEL: arm64
+  UPLOAD_BIN_DIR: false
+  FIRMWARE_RELEASE: true
+  FIRMWARE_TAG: ROOTFS_PLUS
+  OPENWRT_RELEASE: true
+  OPENWRT_TAG: ARMv8_PLUS
   TZ: Asia/Shanghai
 
 jobs:
@@ -67,7 +75,7 @@ jobs:
       uses: unifreq/openwrt_packit@master
       env:
         OPENWRT_ARMVIRT: openwrt-armvirt/*rootfs.tar.gz
-        PACKAGE_SOC: s905d_s905x3_r68s_h68k_qemu
+        PACKAGE_SOC: s905d
         WHOAMI: ver20101
         KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
         KERNEL_VERSION_NAME: 5.15.150_6.1.38
