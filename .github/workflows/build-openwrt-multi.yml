@@ -396,7 +396,8 @@ jobs:
         [ -d openwrt-armvirt ] || mkdir -p openwrt-armvirt
         curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" | grep -o "$FIRMWARE_TAG.*rootfs.tar.gz" > DOWNLOAD_ARMVIRT
         #[ -s DOWNLOAD_ARMVIRT ]
-        wget -q -P openwrt-armvirt https://github.com/$GITHUB_REPOSITORY/releases/download/$(cat DOWNLOAD_ARMVIRT)
+        #wget -q -P openwrt-armvirt https://github.com/$GITHUB_REPOSITORY/releases/download/$(cat DOWNLOAD_ARMVIRT)
+        wget -q -P openwrt-armvirt https://github.com/very20101/openwrt_N1_test/releases/download/ROOTFS_PLUS/openwrt-armvirt-64-generic-rootfs.tar.gz
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "DATE1=$(date +"%y.%m.%d")" >> $GITHUB_ENV
