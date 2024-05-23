@@ -135,5 +135,8 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
+## small-package
+git clone  https://github.com/kenzok8/small-package package/smpackage
+
 ./scripts/feeds update -a
-./scripts/feeds install -a
+./scripts/feeds install -f
