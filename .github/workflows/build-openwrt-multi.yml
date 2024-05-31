@@ -17,8 +17,8 @@ on:
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
   SOURCE_BRANCH: master
-  #FEEDS_CONF: ARMv8/extra.feeds.conf.default
-  CONFIG_FILE: configs/armv8-multi-config
+  FEEDS_CONF: ARMv8/extra.feeds.conf.default
+  CONFIG_FILE: configs/armv8-lede-config0531
   DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
   CLASH_KERNEL: arm64
