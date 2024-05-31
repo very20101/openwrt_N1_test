@@ -22,6 +22,7 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 
 # 添加额外插件
 git clone https://github.com/kenzok8/small-package package/smpackage
+rm -rf package/smpackage/firewall
 
 
 # 更改 Argon 主题背景
