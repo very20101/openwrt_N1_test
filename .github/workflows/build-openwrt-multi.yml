@@ -18,7 +18,7 @@ env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
   SOURCE_BRANCH: master
   CONFIG_FILE: .armv8-multi-config
-  DIY_SCRIPT: diy-script-new.sh
+  DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
   CLASH_KERNEL: arm64
   UPLOAD_BIN_DIR: false
@@ -213,7 +213,7 @@ jobs:
   
         docker rmi $(docker images -q)
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android
-        sudo -E apt purge azure-cli* docker* ghc* zulu* llvm* firefox* google* dotnet* powershell* openjdk* mysql* php* mongodb* snap* aspnetcore*
+        sudo -E apt purge azure-cli* docker* ghc* zulu* firefox* google* dotnet* powershell* openjdk* mysql* php* mongodb* snap* aspnetcore*
         sudo -E apt update
         sudo -E apt install libfuse-dev $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt autoremove --purge
