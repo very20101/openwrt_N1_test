@@ -21,7 +21,7 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 
 
 # 添加额外插件
-git clone https://github.com/kenzok8/small-package package-extra/smpackage
+git clone -b main https://github.com/kenzok8/small-package package-extra/smpackage
 rm -rf package-extra/smpackage/firewall
 
 
