@@ -21,6 +21,7 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 
 # extra package
 git clone --depth=1 -b main  https://github.com/kenzok8/small-package package/small-package
+rm -rf package/small-package/firewall
 
 
 ./scripts/feeds update -a
