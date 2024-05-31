@@ -17,7 +17,7 @@ on:
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
   SOURCE_BRANCH: master
-  CONFIG_FILE: .armv8-multi-config
+  CONFIG_FILE: ARMv8/.armv8-multi-config
   DIY_SCRIPT: diy-script.sh
   TOOLCHAIN_TAG: Toolchain
   CLASH_KERNEL: arm64
@@ -66,6 +66,7 @@ jobs:
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /usr/local/lib/android
         sudo -E apt update
         sudo -E apt install $(curl -fsSL is.gd/depends_ubuntu_2204)
+        sudo -E apt -y install clang llvm lld 
         sudo -E apt autoremove --purge
         sudo -E apt clean
         sudo timedatectl set-timezone "$TZ"
@@ -216,6 +217,7 @@ jobs:
         sudo -E apt purge azure-cli* docker* ghc* zulu* firefox* google* dotnet* powershell* openjdk* mysql* php* mongodb* snap* aspnetcore*
         sudo -E apt update
         sudo -E apt install libfuse-dev $(curl -fsSL is.gd/depends_ubuntu_2204)
+        sudo -E apt -y install clang llvm lld 
         sudo -E apt autoremove --purge
         sudo -E apt clean
         sudo timedatectl set-timezone "$TZ"
