@@ -43,6 +43,12 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
+# perl 
+rm -rf feeds/packages/lang/perl-xml-parser
+git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+mv package/openwrt_N1_test/perl feeds/packages/lang/perl-xml-parser
+rm -rf package/openwrt_N1_test
+
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
