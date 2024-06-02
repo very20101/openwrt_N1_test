@@ -68,8 +68,8 @@ jobs:
         sudo -E apt update
         sudo -E apt install $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt -y install clang llvm lld
-        sudo pip uninstall python-setuptools-scm
-        sudo pip install python-setuptools-scm==7.1.0
+        sudo pip uninstall setuptools-scm
+        sudo pip install setuptools-scm==7.1.0
         sudo -E apt autoremove --purge
         sudo -E apt clean
         sudo timedatectl set-timezone "$TZ"
@@ -221,8 +221,8 @@ jobs:
         sudo -E apt update
         sudo -E apt install libfuse-dev $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt -y install clang llvm lld 
-        sudo pip uninstall python-setuptools-scm
-        sudo pip install python-setuptools-scm==7.1.0
+        sudo pip uninstall setuptools-scm
+        sudo pip install setuptools-scm==7.1.0
         sudo -E apt autoremove --purge
         sudo -E apt clean
         sudo timedatectl set-timezone "$TZ"
