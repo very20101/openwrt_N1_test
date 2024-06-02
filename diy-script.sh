@@ -44,9 +44,11 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
 # perl 
-rm -rf feeds/packages/lang/perl-xml-parser
+rm -rf feeds/packages/lang/perl-xml-parser /feeds/packages/python-bidict
 git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
 mv package/openwrt_N1_test/perl feeds/packages/lang/perl-xml-parser
+mv package/openwrt_N1_test/extra_pack/python-bidict /feeds/packages/python-bidict
+
 rm -rf package/openwrt_N1_test
 
 
