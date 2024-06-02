@@ -219,8 +219,6 @@ jobs:
         sudo -E apt update
         sudo -E apt install libfuse-dev $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt -y install clang llvm lld 
-        sudo pip install --upgrade pip
-        sudo pip install --upgrade setuptools pkg_resources
         sudo -E apt autoremove --purge
         sudo -E apt clean
         sudo timedatectl set-timezone "$TZ"
