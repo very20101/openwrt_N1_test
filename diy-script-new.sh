@@ -163,6 +163,18 @@ git clone -b main https://github.com/very20101/openwrt_N1_test package/perl
 mv package/perl/perl feeds/packages/lang/perl
 rm -rf package/perl
 
+# extra package 
+rm -rf feeds/packages/lang/perl-xml-parser feeds/packages/lang/python/python-bidict package/network/services/hostapd 
+rm -rf feeds/packages/lang/python/python-setuptools-scm feeds/packages/lang/python/python-dateutil
+git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+mv package/openwrt_N1_test/perl feeds/packages/lang/perl-xml-parser
+mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
+mv package/openwrt_N1_test/extra_pack/hostapd package/network/services/hostapd
+mv package/openwrt_N1_test/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
+mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
+
+rm -rf package/openwrt_N1_test
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
