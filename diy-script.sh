@@ -7,7 +7,7 @@
 # Blog: https://p3terx.com
 # Code from https://github.com/haiibo/OpenWrt
 # Code from https:/github.com/breakings/openwrt
-# extra package from https://github.com/kenzok8/small-package
+# extra package from https://github.com/kenzok8
 #===============================================
 
 # 修改默认IP
@@ -22,7 +22,7 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 # extra package
 #git clone https://github.com/kenzok8/small-package package/small-package
 git clone https://github.com/kenzok8/openwrt-packages package/kenzo
-git clone https://github.com/kenzok8/small package/small
+git clone https://github.com/kenzok8/small package/smallpackage
 #rm -rf package/small-package/firewall
 
 # 修改本地时间格式
@@ -54,12 +54,17 @@ mv package/openwrt_N1_test/extra_pack/python-setuptools-scm feeds/packages/lang/
 mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
 
 # extra package 
-rm -rf feeds/packages/lang/perl-xml-parser feeds/packages/lang/python/python-bidict package/network/services/hostapd 
-rm -rf feeds/packages/lang/python/python-setuptools-scm feeds/packages/lang/python/python-dateutil
+rm -rf feeds/packages/lang/perl-xml-parser feeds/packages/lang/python/python-bidict \
+package/network/services/hostapd  feeds/packages/lang/python/python-setuptools-scm \
+feeds/packages/lang/python/python-setuptools-scm feeds/packages/lang/python/python-dateutil \
+feeds/packages/lang/python/python-installer feeds/packages/lang/python/python-installer \
+feeds/packages/lang/python/python-build feeds/packages/lang/python/python-packaging \
+feeds/packages/lang/python/python-typing-extensions
+
 git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+mv package/openwrt_N1_test/extra_pack/hostapd package/network/services/hostapd
 mv package/openwrt_N1_test/perl feeds/packages/lang/perl-xml-parser
 mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
-mv package/openwrt_N1_test/extra_pack/hostapd package/network/services/hostapd
 mv package/openwrt_N1_test/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
 mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
 
