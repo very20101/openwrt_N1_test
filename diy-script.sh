@@ -19,7 +19,7 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 # extra package
 #git clone https://github.com/kenzok8/small-package package/small-package
 git clone https://github.com/kenzok8/openwrt-packages package/kenzo
-git clone https://github.com/kenzok8/small package/smallpackage
+git clone https://github.com/kenzok8/small package/small-deps
 #rm -rf package/small-package/firewall
 
 # 修改本地时间格式
