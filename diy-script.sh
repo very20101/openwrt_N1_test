@@ -7,7 +7,7 @@
 # Blog: https://p3terx.com
 # Code from https://github.com/haiibo/OpenWrt
 # Code from https:/github.com/breakings/openwrt
-# extra package from https://github.com/kenzok8/small-package
+# extra package from https://github.com/kenzok8
 #===============================================
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
@@ -15,11 +15,13 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # TTYD 免登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
+
 # extra package
 #git clone https://github.com/kenzok8/small-package package/small-package
 git clone https://github.com/kenzok8/openwrt-packages package/kenzo
-git clone https://github.com/kenzok8/small package/small
+git clone https://github.com/kenzok8/small package/smallpackage
 #rm -rf package/small-package/firewall
+
 # 修改本地时间格式
 sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 # 修复 hostapd 报错
@@ -34,7 +36,7 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
-# extra package
+# extra package for perl python
 rm -rf feeds/packages/lang/perl feeds/packages/lang/python/python-bidict package/network/services/hostapd 
 rm -rf feeds/packages/lang/python/python-setuptools-scm  feeds/packages/lang/host-pip-requirements/setuptools-scm.txt
 git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
