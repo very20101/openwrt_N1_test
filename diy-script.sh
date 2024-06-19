@@ -36,12 +36,13 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 
 # perl 
 rm -rf feeds/packages/lang/perl feeds/packages/lang/python/python-bidict package/network/services/hostapd 
-rm -rf feeds/packages/lang/python/python-setuptools-scm
+rm -rf feeds/packages/lang/python/python-setuptools-scm  feeds/packages/lang/host-pip-requirements/setuptools-scm.txt
 git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
 mv package/openwrt_N1_test/perl feeds/packages/lang/perl
 mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
 mv package/openwrt_N1_test/extra_pack/hostapd package/network/services/hostapd
 mv package/openwrt_N1_test/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
+mv package/openwrt_N1_test/extra_pack/host-pip-requirements/setuptools-scm.txt feeds/packages/lang/host-pip-requirements/setuptools-scm.txt
 
 rm -rf package/openwrt_N1_test
 
