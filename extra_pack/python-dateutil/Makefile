@@ -16,7 +16,7 @@ PYPI_NAME:=$(PKG_NAME)
 PKG_HASH:=37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3
 PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 
-PKG_BUILD_DEPENDS:=python-setuptools-scm
+PKG_BUILD_DEPENDS:=python-setuptools-scm/host
 
 include ../pypi.mk
 include $(INCLUDE_DIR)/package.mk
