@@ -156,6 +156,21 @@ jobs:
         cd $OPENWRT_PATH
         mkdir -p files/etc/uci-defaults
         cp $GITHUB_WORKSPACE/scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
+
+        rm -rf feeds/packages/lang/perl feeds/packages/lang/python/python-bidict package/network/services/hostapd 
+        rm -rf feeds/packages/lang/python/python-setuptools-scm  feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
+        rm -rf feeds/packages/lang/python/python-dateutil
+        git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+
+        mv package/openwrt_N1_test/perl feeds/packages/lang/perl
+        mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
+        mv package/openwrt_N1_test/extra_pack/hostapd package/network/services/hostapd
+        mv package/openwrt_N1_test/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
+        mv package/openwrt_N1_test/extra_pack/host-pip-requirements/setuptools-scm.txt feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
+        mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
+
+        rm -rf package/openwrt_N1_test
+        
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
