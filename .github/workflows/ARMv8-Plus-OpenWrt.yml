@@ -159,7 +159,7 @@ jobs:
 
         rm -rf feeds/packages/lang/perl feeds/packages/lang/python/python-bidict package/network/services/hostapd 
         rm -rf feeds/packages/lang/python/python-setuptools-scm  feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
-        rm -rf feeds/packages/lang/python/python-dateutil
+        rm -rf feeds/packages/lang/python/python-dateutil package/lean/libcryptopp
         git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
 
         mv package/openwrt_N1_test/perl feeds/packages/lang/perl
