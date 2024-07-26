@@ -168,6 +168,7 @@ jobs:
         mv package/openwrt_N1_test/extra_pack/python-setuptools-scm feeds/packages/lang/python/python-setuptools-scm
         mv package/openwrt_N1_test/extra_pack/host-pip-requirements/setuptools-scm.txt feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
         mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
+        mv package/openwrt_N1_test/extra_pack/libcryptopp package/lean/libcryptopp
 
         rm -rf package/openwrt_N1_test
         
