@@ -67,6 +67,7 @@ jobs:
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /usr/local/lib/android
         sudo -E apt update
         sudo -E apt install $(curl -fsSL is.gd/depends_ubuntu_2204)
+        sudo -E apt install libfuse-dev
         sudo -E apt -y install clang llvm lld
         #sudo pip uninstall setuptools-scm
         #sudo pip install setuptools-scm==7.1.0
