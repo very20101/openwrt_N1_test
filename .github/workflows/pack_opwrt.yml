@@ -9,8 +9,8 @@
 name: pack_opwrt
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: 30 8 */2 * *
+  schedule:
+    - cron: 30 6 */2 * *
   watch:
     types: started
 
@@ -21,9 +21,9 @@ env:
   CLASH_KERNEL: arm64
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: ROOTFS_PLUS
+  FIRMWARE_TAG: Nova_Opwrt
   OPENWRT_RELEASE: true
-  OPENWRT_TAG: ARMv8_PLUS
+  OPENWRT_TAG: ARMv8_Nova
   TZ: Asia/Shanghai
 
 jobs:
@@ -56,14 +56,14 @@ jobs:
         [ -d $FIRMWARE_PATH ] || mkdir -p $FIRMWARE_PATH
         #FIRMWARE_URL=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" | grep -o "ROOTFS_$VERSION.*rootfs.tar.gz")
         #FIRMWARE_URL=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/download/OpenWrt-NewK" | grep -o "ROOTFS_$VERSION.*rootfs.tar.gz")
-        #wget -q -P openwrt-armvirt https://github.com/very20101/openwrt_N1_test/releases/download/ROOTFS_PLUS/openwrt-armvirt-64-generic-rootfs.tar.gz
+        #wget -q -P openwrt-armvirt https://github.com/very20101/openwrt_N1_test/releases/download/Nova_Opwrt/openwrt-armvirt-64-generic-rootfs.tar.gz
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Package OpenWrt Firmware
       if: steps.download.outputs.status == 'success'
       uses: unifreq/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: https://github.com/very20101/openwrt_N1_test/releases/download/ROOTFS_PLUS/openwrt-armvirt-64-generic-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/very20101/openwrt_N1_test/releases/download/Nova_Opwrt/openwrt-armvirt-64-generic-rootfs.tar.gz
         PACKAGE_SOC: s905d
         WHOAMI: ver20101
         #KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
