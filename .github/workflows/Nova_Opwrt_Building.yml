@@ -70,8 +70,8 @@ jobs:
     - name: Initialization environment
       id: init
       env:
-       DEBIAN_FRONTEND: noninteractive
-       run: |
+        DEBIAN_FRONTEND: noninteractive
+      run: |
         docker rmi $(docker images -q) 2>/dev/null
         [[ -n "${AGENT_TOOLSDIRECTORY}" ]] && sudo rm -rf "${AGENT_TOOLSDIRECTORY}"
         sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android 2>/dev/null
