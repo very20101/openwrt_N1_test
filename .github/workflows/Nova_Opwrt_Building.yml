@@ -164,6 +164,12 @@ jobs:
         rm -rf $GITHUB_WORKSPACE/opt
         df -Th
         
+    - name: Clean up workspace before build
+      run: rm -rf build_dir staging_dir tmp
+      
+    - name: Increase disk space
+      run: sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
+      
     - name: Compile the firmware
       id: compile
       run: |
