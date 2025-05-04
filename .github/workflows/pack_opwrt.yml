@@ -9,8 +9,8 @@
 name: pack_opwrt
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 30 8 */10 * *
+  #schedule:
+   # - cron: 30 8 */10 * *
   watch:
     types: started
 
