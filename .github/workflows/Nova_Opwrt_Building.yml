@@ -172,13 +172,16 @@ jobs:
       run: rm -rf build_dir staging_dir tmp
       
     - name: Increase disk space
-      run: sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
+      run: |
+        tmpfs /tmp tmpfs defaults,size=20G 0 0
+        sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" 
       
     - name: Compile the firmware
       id: compile
       run: |
         cd openwrt/
-        #make dirclean
+        make clean
+        make dirclean
         make defconfig
         #git clone -b main https://github.com/very20101/openwrt_retry packages/op-retry
         #rm -rf feeds/packages/lang/ruby
