@@ -172,12 +172,9 @@ jobs:
       run: |
         rm -rf build_dir staging_dir tmp
         rm -rf $GITHUB_WORKSPACE/*
-      
+
     - name: Increase disk space
-      run: |
-        sudo mkdir -p /mnt/tmp
-        sudo mount -t tmp -o size=4096m tmp /mnt/tmp
-        sudo mount -o remount,size=4096m /tmp || echo "Disk space adjustment not supported" 
+      run: sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" " 
       
     - name: Compile the firmware
       id: compile
