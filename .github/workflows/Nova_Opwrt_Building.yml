@@ -175,9 +175,9 @@ jobs:
       
     - name: Increase disk space
       run: |
-        sudo mkdir -p /mnt/tmpfs
-        sudo mount -t tmpfs -o size=2048m tmpfs /mnt/tmpfs
-        sudo mount -o remount,size=2048m /tmpfs || echo "Disk space adjustment not supported" 
+        sudo mkdir -p /mnt/tmp
+        sudo mount -t tmp -o size=4096m tmp /mnt/tmp
+        sudo mount -o remount,size=4096m /tmp || echo "Disk space adjustment not supported" 
       
     - name: Compile the firmware
       id: compile
