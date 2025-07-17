@@ -169,20 +169,23 @@ jobs:
         df -Th
         
     - name: Clean up workspace before build
-      run: rm -rf build_dir staging_dir tmp
+      run: |
+        rm -rf build_dir staging_dir tmp tmpfs
+        rm -rf $GITHUB_WORKSPACE/*
+        docker system prune -af
       
     - name: Increase disk space
       run: |
-        sudo mkdir -p /mnt/tmp
-        sudo mount -t tmp -o size=10G tmp /mnt/tmp
-        sudo mount -o remount,size=10G /tmp || echo "Disk space adjustment not supported" 
+        sudo mkdir -p /mnt/tmpfs
+        sudo mount -t tmpfs -o size=2048m tmpfs /mnt/tmpfs
+        sudo mount -o remount,size=2048m /tmpfs || echo "Disk space adjustment not supported" 
       
     - name: Compile the firmware
       id: compile
       run: |
         cd openwrt/
-        make clean
-        make dirclean
+        #make clean
+        #make dirclean
         make defconfig
         #git clone -b main https://github.com/very20101/openwrt_retry packages/op-retry
         #rm -rf feeds/packages/lang/ruby
