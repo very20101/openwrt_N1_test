@@ -182,10 +182,10 @@ jobs:
         rm -rf $GITHUB_WORKSPACE/opt
         df -Th
         
-    - name: Clean up workspace before build
-      run: |
-        rm -rf build_dir staging_dir tmp
-        rm -rf $GITHUB_WORKSPACE/*
+ #   - name: Clean up workspace before build
+  #    run: |
+  #      rm -rf build_dir staging_dir tmp
+  #      rm -rf $GITHUB_WORKSPACE/*
 
  #   - name: Increase disk space
   #    run: |
