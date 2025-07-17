@@ -46,6 +46,13 @@ jobs:
     #if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id
 
     steps:
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
+      with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          
     - name: Checkout
       uses: actions/checkout@main
       
@@ -172,19 +179,6 @@ jobs:
       run: |
         rm -rf build_dir staging_dir tmp
         rm -rf $GITHUB_WORKSPACE/*
-
-    - name: Free Disk Space
-      uses: endersonmenezes/free-disk-space@v2
-      with:
-          remove_android: true
-          remove_dotnet: true
-          remove_haskell: true
-          remove_tool_cache: true
-          remove_swap: true
-          remove_packages: "azure-cli google-cloud-cli microsoft-edge-stable google-chrome-stable firefox postgresql* temurin-* *llvm* mysql* dotnet-sdk-*"
-          remove_packages_one_command: true
-          remove_folders: "/usr/share/swift /usr/share/miniconda /usr/share/az* /usr/share/glade* /usr/local/lib/node_modules /usr/local/share/chromium /usr/local/share/powershell"
-          testing: false
 
     - name: Increase disk space
       run: sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" " 
