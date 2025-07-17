@@ -49,9 +49,16 @@ jobs:
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
       with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
+        root-reserve-mb: 4096
+        swap-size-mb: 1024
+        temp-reserve-mb: 200
+        build-mount-path: /workdir
+        overprovision-lvm: 'true'
+        remove-dotnet: 'true'
+        remove-android: 'true'
+        remove-haskell: 'true'
+        remove-codeql: 'true'
+        remove-docker-images: 'true'
           
     - name: Checkout
       uses: actions/checkout@main
@@ -180,9 +187,11 @@ jobs:
         rm -rf build_dir staging_dir tmp
         rm -rf $GITHUB_WORKSPACE/*
 
-    - name: Increase disk space
-      run: sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" " 
-      
+ #   - name: Increase disk space
+  #    run: |
+  #      sudo mount -o remount,size=20G /tmp || echo "Disk space adjustment not supported" " 
+  #      echo "DATE: $(date '+%Y-%m-%d %H:%M:%S')"
+        
     - name: Compile the firmware
       id: compile
       run: |
