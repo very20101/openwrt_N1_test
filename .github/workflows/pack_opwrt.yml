@@ -63,7 +63,7 @@ jobs:
       if: steps.download.outputs.status == 'success'
       uses: unifreq/openwrt_packit@master
       env:
-        OPENWRT_ARMVIRT: https://github.com/very20101/openwrt_N1_test/releases/download/Nova_Opwrt/openwrt-armvirt-64-generic-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/very20101/openwrt_N1_test/releases/download/Nova_Opwrt/openwrt-armsr-armv8-generic-rootfs.tar.gz
         PACKAGE_SOC: s905d
         WHOAMI: ver20101
         #KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
