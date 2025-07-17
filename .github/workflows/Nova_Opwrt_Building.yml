@@ -170,9 +170,8 @@ jobs:
         
     - name: Clean up workspace before build
       run: |
-        rm -rf build_dir staging_dir tmp tmpfs
+        rm -rf build_dir staging_dir tmp
         rm -rf $GITHUB_WORKSPACE/*
-        docker system prune -af
       
     - name: Increase disk space
       run: |
