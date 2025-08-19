@@ -67,7 +67,7 @@ jobs:
         PACKAGE_SOC: s905d
         WHOAMI: ver20101
         #KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
-        KERNEL_VERSION_NAME: 5.15.150_6.1.38_6.6.28
+        KERNEL_VERSION_NAME: 5.15.150_6.1.100_6.6.60_6.12.20
         KERNEL_AUTO_LATEST: true
         DISTRIB_REVISION: R${{ env.DATE1 }} by very20101
 
