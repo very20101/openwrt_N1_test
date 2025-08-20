@@ -42,7 +42,12 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 #rm -rf package/network/services/hostapd 
 #rm -rf feeds/packages/lang/python/python-setuptools-scm  feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
 #rm -rf feeds/packages/lang/python/python-dateutil
-#git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
+
+rm -rf feeds/packages/net/adblock 
+cp package/openwrt_N1_test/extra_pack/adblock feeds/packages/net/adblock 
+rm -rf feeds/luci/applications/luci-app-adblock
+cp package/openwrt_N1_test/extra_pack/uci-app-adblock feeds/luci/applications/luci-app-adblock
 
 #mv package/openwrt_N1_test/perl feeds/packages/lang/perl
 #mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
@@ -51,7 +56,7 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 #mv package/openwrt_N1_test/extra_pack/host-pip-requirements/setuptools-scm.txt feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
 #mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
 
-#rm -rf package/openwrt_N1_test
+rm -rf package/openwrt_N1_test
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
