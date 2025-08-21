@@ -200,7 +200,6 @@ jobs:
         #make dirclean
         make defconfig
         rm -rf package/feeds/packages/sing-box
-        rm -rf package/feeds/luci/luci-app-passwall
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
