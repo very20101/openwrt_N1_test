@@ -199,9 +199,7 @@ jobs:
         #make clean
         #make dirclean
         make defconfig
-        #git clone -b main https://github.com/very20101/openwrt_retry packages/op-retry
-        #rm -rf feeds/packages/lang/ruby
-        #cp -rf packages/op-retry/pkg_modified/ruby feeds/packages/lang/ruby
+        rm -rf package/feeds/packages/sing-box
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
