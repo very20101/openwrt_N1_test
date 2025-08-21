@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_gener
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # extra package
-git clone https://github.com/very20101/small-package small-package
+git clone https://github.com/very20101/small-package package/smallpackage
 #git clone https://github.com/kenzok8/openwrt-packages package/kenzo
 #git clone https://github.com/kenzok8/small package/small-deps
 #rm -rf package/small-package/firewall
@@ -45,9 +45,9 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
 
 rm -rf feeds/packages/net/adblock 
-cp package/openwrt_N1_test/extra_pack/adblock feeds/packages/net/adblock 
+cp -rf package/openwrt_N1_test/extra_pack/adblock feeds/packages/net/adblock 
 rm -rf feeds/luci/applications/luci-app-adblock
-cp package/openwrt_N1_test/extra_pack/uci-app-adblock feeds/luci/applications/luci-app-adblock
+cp -rf package/openwrt_N1_test/extra_pack/uci-app-adblock feeds/luci/applications/luci-app-adblock
 
 #mv package/openwrt_N1_test/perl feeds/packages/lang/perl
 #mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
