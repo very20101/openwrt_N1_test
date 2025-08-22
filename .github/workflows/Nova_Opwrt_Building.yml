@@ -195,7 +195,7 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        make clean
+        #make clean
         cd openwrt/
         #make dirclean
         make defconfig
