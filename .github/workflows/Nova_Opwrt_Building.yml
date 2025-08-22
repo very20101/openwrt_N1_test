@@ -197,7 +197,7 @@ jobs:
       run: |
         make clean
         cd openwrt/
-        make defconfig clean
+        make dirclean
         make defconfig
         rm -rf package/feeds/packages/sing-box
         echo -e "$(nproc) thread compile"
