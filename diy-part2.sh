@@ -56,7 +56,7 @@ cp -rf package/openwrt_N1_test/extra_pack/uci-app-adblock feeds/luci/application
 #mv package/openwrt_N1_test/extra_pack/host-pip-requirements/setuptools-scm.txt feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
 #mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
 
-rm -rf package/openwrt_N1_test
+#rm -rf package/openwrt_N1_test
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
