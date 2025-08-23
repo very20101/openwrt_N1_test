@@ -49,6 +49,14 @@ cp -rf package/openwrt_N1_test/extra_pack/adblock feeds/packages/net/adblock
 rm -rf feeds/luci/applications/luci-app-adblock
 cp -rf package/openwrt_N1_test/extra_pack/luci-app-adblock feeds/luci/applications/luci-app-adblock
 
+#rm -rf package/feeds/packages/sing-box
+rm -rf feeds/luci/applications/luci-app-upnp
+#cp -rf package/openwrt_N1_test/extra_pack/luci-app-upnp feeds/luci/applications/luci-app-upnp
+rm -rf feeds/packages/net/miniupnpc
+cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpc
+rm -rf feeds/packages/net/miniupnpd
+cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
+
 #mv package/openwrt_N1_test/perl feeds/packages/lang/perl
 #mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
 #mv package/openwrt_N1_test/extra_pack/hostapd package/network/services/hostapd
