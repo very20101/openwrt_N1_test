@@ -47,7 +47,7 @@ git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
 rm -rf feeds/packages/net/adblock 
 cp -rf package/openwrt_N1_test/extra_pack/adblock feeds/packages/net/adblock 
 rm -rf feeds/luci/applications/luci-app-adblock
-cp -rf package/openwrt_N1_test/extra_pack/uci-app-adblock feeds/luci/applications/luci-app-adblock
+cp -rf package/openwrt_N1_test/extra_pack/luci-app-adblock feeds/luci/applications/luci-app-adblock
 
 #mv package/openwrt_N1_test/perl feeds/packages/lang/perl
 #mv package/openwrt_N1_test/extra_pack/python-bidict feeds/packages/lang/python/python-bidict
