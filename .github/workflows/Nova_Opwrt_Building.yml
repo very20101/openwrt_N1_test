@@ -200,14 +200,6 @@ jobs:
         #make dirclean
         make defconfig clean
         make defconfig
-        rm -rf package/feeds/packages/sing-box
-        rm -rf feeds/luci/applications/luci-app-upnp
-        #cp -rf package/openwrt_N1_test/extra_pack/luci-app-upnp feeds/luci/applications/luci-app-upnp
-        rm -rf feeds/packages/net/miniupnpc
-        cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpc
-        rm -rf feeds/packages/net/miniupnpd
-        cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
-        #rm -rf package/small-package/base-files
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> ${GITHUB_OUTPUT}
