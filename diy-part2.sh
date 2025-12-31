@@ -72,7 +72,7 @@ cp -rf package/openwrt_N1_test/extra_pack/cmake tools/cmake
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
-#rm -rf package/openwrt_N1_test
+rm -rf package/openwrt_N1_test
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
