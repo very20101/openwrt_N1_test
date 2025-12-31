@@ -11,7 +11,8 @@ PKG_VERSION:=1.8.10
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL=https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git
+#PKG_SOURCE_URL=https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git
+PKG_SOURCE_URL=https://kernel.googlesource.com/pub/scm/linux/kernel/git/xiang/erofs-utils.git
 #PKG_SOURCE_URL=https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.10.tar.gz
 #PKG_SOURCE_URL=https://raw.githubusercontent.com/very20101/Openwrt_N1_try/refs/heads/main/extra_pack/erofs-utils-1.8.10.tar.gz
 PKG_MIRROR_HASH:=a21d244aee8cb216ac4436bf7f790e75fca113ea9a5512c8e4ac530c4983ef32
