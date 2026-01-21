@@ -50,7 +50,7 @@ jobs:
         [ -d $FIRMWARE_PATH ] || mkdir -p $FIRMWARE_PATH
         #FIRMWARE_URL=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" | grep -o "ROOTFS_$VERSION.*rootfs.tar.gz")
         #FIRMWARE_URL=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/download/OpenWrt-NewK" | grep -o "ROOTFS_$VERSION.*rootfs.tar.gz")
-        wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_retry/releases/download/Nova_Opwrt/openwrt-armsr-armv8-generic-rootfs.tar.gz  
+        wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_N1_test/releases/download/Nova_Opwrt/openwrt-armsr-armv8-generic-rootfs.tar.gz  
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Package Armvirt as OpenWrt
