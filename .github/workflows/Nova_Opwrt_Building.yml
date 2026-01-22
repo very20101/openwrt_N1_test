@@ -29,7 +29,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: lede.feeds.conf.default
-  CONFIG_FILE: configs/config-lede-new001
+  CONFIG_FILE: configs/config-lede-new002
   #CONFIG_FILE: configs/config20260103002
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -109,12 +109,12 @@ jobs:
         sudo timedatectl set-timezone "${TZ}"
         echo "status=success" >> ${GITHUB_OUTPUT}
         
-        sudo -E apt-get -y install software-properties-common
-        sudo -E add-apt-repository ppa:ubuntu-toolchain-r/test
-        sudo -E apt-get -y install gcc-12 g++-12 gcc-13 g++-13 -y
-        #sudo -E update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12 --slave /usr/bin/g++ g++ /usr/bin/g++-12
-        sudo -E update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13 --slave /usr/bin/g++ g++ /usr/bin/g++-13
-        sudo -E update-alternatives --config gcc
+        #sudo -E apt-get -y install software-properties-common
+        #sudo -E add-apt-repository ppa:ubuntu-toolchain-r/test
+        #sudo -E apt-get -y install gcc-12 g++-12 gcc-13 g++-13 -y
+        ##sudo -E update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12 --slave /usr/bin/g++ g++ /usr/bin/g++-12
+        #sudo -E update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13 --slave /usr/bin/g++ g++ /usr/bin/g++-13
+        #sudo -E update-alternatives --config gcc
         gcc --version
         
         sudo -E apt-get clean && sudo -E apt-get autoclean
@@ -202,7 +202,7 @@ jobs:
         #rm -rf feeds/smpackage/fullconenat-nft package/network/services/fullconenat-nft
         #make clean
         #make dirclean
-        make defconfig clean
+        #make defconfig clean
         make defconfig
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
