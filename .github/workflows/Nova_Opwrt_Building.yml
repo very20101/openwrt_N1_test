@@ -200,7 +200,7 @@ jobs:
       run: |
         cd openwrt/
         #rm -rf feeds/smpackage/fullconenat-nft package/network/services/fullconenat-nft
-        make clean
+        #make clean
         #make dirclean
         make defconfig clean
         make defconfig
