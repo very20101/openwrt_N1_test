@@ -64,8 +64,8 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
 #mv package/openwrt_N1_test/extra_pack/host-pip-requirements/setuptools-scm.txt feeds/packages/lang/python/host-pip-requirements/setuptools-scm.txt
 #mv package/openwrt_N1_test/extra_pack/python-dateutil feeds/packages/lang/python/python-dateutil
 
-#rm -rf tools/cmake
-#cp -rf package/openwrt_N1_test/extra_pack/cmake tools/cmake
+rm -rf tools/cmake
+cp -rf package/openwrt_N1_test/extra_pack/cmake tools/cmake
 
 #rm -rf feeds/packages/lang/golang
 #git clone https://github.com/kenzok8/golang -b 1.25 feeds/packages/lang/golang
