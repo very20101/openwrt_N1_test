@@ -67,6 +67,9 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
 #rm -rf tools/cmake
 #cp -rf package/openwrt_N1_test/extra_pack/cmake tools/cmake
 
+rm -rf tools/erofs-utils
+cp -rf package/openwrt_N1_test/extra_pack/erofs-utils tools/erofs-utils
+
 #rm -rf feeds/packages/lang/golang
 #git clone https://github.com/kenzok8/golang -b 1.25 feeds/packages/lang/golang
 
