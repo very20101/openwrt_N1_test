@@ -48,6 +48,8 @@ rm -rf feeds/packages/net/adblock
 cp -rf package/openwrt_N1_test/extra_pack/adblock feeds/packages/net/adblock 
 rm -rf feeds/luci/applications/luci-app-adblock
 cp -rf package/openwrt_N1_test/extra_pack/luci-app-adblock feeds/luci/applications/luci-app-adblock
+rm -rf feeds/smpackage/dapnet-gateway
+cp -rf package/openwrt_N1_test/extra_pack/dapnet-gateway feeds/smpackage/dapnet-gateway
 
 #rm -rf package/feeds/packages/sing-box
 rm -rf feeds/luci/applications/luci-app-upnp
