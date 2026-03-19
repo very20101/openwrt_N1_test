@@ -187,7 +187,8 @@ jobs:
       run: |
         cd openwrt/
         #rm -rf feeds/smpackage/fullconenat-nft package/network/services/fullconenat-nft
-        make clean
+        rm -rf feeds/smpackage/dapnet-gateway
+        #make clean
         #make dirclean
         make defconfig clean
         make defconfig
