@@ -188,7 +188,7 @@ jobs:
         cd openwrt/
         #rm -rf feeds/smpackage/fullconenat-nft package/network/services/fullconenat-nft
         rm -rf feeds/smpackage/dapnet-gateway
-        rm -rf feeds/smpackage/shadowsocksr-libev
+        #rm -rf feeds/smpackage/shadowsocksr-libev
         #make clean
         #make dirclean
         make defconfig clean
