@@ -78,6 +78,9 @@ cp -rf package/openwrt_N1_test/extra_pack/miniupnpc feeds/packages/net/miniupnpd
 #rm -rf feeds/packages/lang/golang
 #git clone https://github.com/kenzok8/golang -b 1.25 feeds/packages/lang/golang
 
+rm -rf feeds/smpackage/shadowsocksr-libev
+cp -rf package/openwrt_N1_test/extra_pack/shadowsocksr-libev feeds/smpackage/shadowsocksr-libev
+
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
 rm -rf package/openwrt_N1_test
