@@ -187,7 +187,9 @@ jobs:
       run: |
         cd openwrt/
         #rm -rf feeds/smpackage/fullconenat-nft package/network/services/fullconenat-nft
+        git clone https://github.com/very20101/openwrt_N1_test package/openwrt_N1_test
         rm -rf feeds/smpackage/dapnet-gateway
+        cp -rf package/openwrt_N1_test/extra_pack/dapnet-gateway feeds/smpackage/dapnet-gateway
         #rm -rf feeds/smpackage/shadowsocksr-libev
         #make clean
         #make dirclean
