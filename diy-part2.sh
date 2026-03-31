@@ -87,4 +87,5 @@ rm -rf package/openwrt_N1_test
 
 ./scripts/feeds update -a
 ./scripts/feeds install -f
+./scripts/feeds uninstall {mmdvm,mmdvm-host,p25-clients,ysf-clients,nxdn-clients,mmdvm-luci,dapnet-gateway,ircddb-gateway,libmmdvm,libwxwidgets,mmdvm-cal}
 
