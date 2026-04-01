@@ -37,9 +37,9 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: Nova_Opwrt
-  PRODUCT_NAME: Nova_Opwrt
-  OPENWRT_TAG: Nova_Opwrt
+  FILE_NAME: Nova_Opwrt_A
+  PRODUCT_NAME: Nova_Opwrt_A
+  OPENWRT_TAG: Nova_Opwrt_A
   
 jobs:
   build:
