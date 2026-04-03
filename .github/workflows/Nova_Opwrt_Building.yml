@@ -194,6 +194,7 @@ jobs:
         rm -rf package/openwrt_N1_test
         rm -rf feeds/smpackage/libmmdvm
         rm -rf feeds/smpackage/quectel-cm
+        rm -rf feeds/smpackage/quectel_cm_5G
         #make clean
         #make dirclean
         make defconfig clean
