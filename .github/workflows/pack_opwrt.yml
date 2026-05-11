@@ -61,13 +61,13 @@ jobs:
 
     - name: Package OpenWrt Firmware
       if: steps.download.outputs.status == 'success'
-      uses: unifreq/openwrt_packit@master
+      uses: ophub/flippy-openwrt-actions@main
       env:
-        OPENWRT_ARMVIRT: https://github.com/very20101/openwrt_N1_test/releases/download/Nova_Opwrt/openwrt-armsr-armv8-generic-rootfs.tar.gz
+        OPENWRT_ARMVIRT: https://github.com/very20101/openwrt_N1_test/releases/download/Nova_Opwrt_A/openwrt-armsr-armv8-generic-rootfs.tar.gz
         PACKAGE_SOC: s905d
         WHOAMI: ver20101
         #KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/stable
-        KERNEL_VERSION_NAME: 5.15.150_6.1.100_6.6.60_6.12.20
+        KERNEL_VERSION_NAME:  6.1.100_6.6.60_6.12.y_6.18.y
         KERNEL_AUTO_LATEST: true
         DISTRIB_REVISION: R${{ env.DATE1 }} by very20101
 
