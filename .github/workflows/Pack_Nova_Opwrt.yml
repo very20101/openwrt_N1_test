@@ -54,17 +54,16 @@ jobs:
         wget -q -P $FIRMWARE_PATH https://github.com/very20101/Openwrt_N1_test/releases/download/Nova_Opwrt_A/openwrt-armsr-armv8-generic-rootfs.tar.gz 
         echo "status=success" >> $GITHUB_OUTPUT
 
-    - name: Package Armvirt as OpenWrt
+    - name: Package armsr-armv8 as OpenWrt
       if: steps.download.outputs.status == 'success'
-      uses: unifreq/openwrt_packit@master
-      env:
-        OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
-        PACKAGE_SOC: s905d
-        WHOAMI: very20101
-        #KERNEL_REPO_URL: https://github.com/ophub/kernel/releases/tag/kernel_stable
-        KERNEL_VERSION_NAME: 5.15.y_6.1.y_6.6.y_6.12.y
-        KERNEL_AUTO_LATEST: true
-        DISTRIB_REVISION: R${{ env.DATE1 }} by very20101
+      uses: ophub/amlogic-s9xxx-openwrt@main
+      with:
+        openwrt_path: openwrt/bin/targets/*/*/*rootfs.tar.gz
+        openwrt_board: s905d
+        openwrt_kernel: 6.1.y_6.6.y_6.12.y_6.18.y
+        builder_name: very20101
+        auto_kernel: true
+        openwrt_ip: 192.168.1.100
 
     - name: Upload OpenWrt To Artifact
       if: env.PACKAGED_STATUS == 'success' && env.UPLOAD_RELEASE != 'true'
